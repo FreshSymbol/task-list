@@ -1,0 +1,56 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.status {
+  text-align: center;
+  color: #ccc;
+  font-size: 3em;
+  margin-bottom: 20px;
+  animation: flicker 1s 3s linear;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (width<=1440px) {
+  .list {
+    gap: 30px;
+  }
+
+  .status {
+    font-size: 2em;
+  }
+
+  .error {
+    font-size: 1em;
+  }
+}
+
+@media (width<=1024px) {
+  .list {
+    gap: 20px;
+  }
+
+  .status {
+    font-size: 1em;
+  }
+}

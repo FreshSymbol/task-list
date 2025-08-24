@@ -1,0 +1,64 @@
+.form {
+  margin: 50px 30px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  font-size: 3em;
+
+  .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .input {
+    padding: 15px 20px;
+    min-width: 400px;
+    outline: 1px solid #1976d2;
+    border-radius: 15px;
+  }
+
+  .button {
+    padding: 15px 20px;
+    min-height: 50px;
+    color: #1976d2;
+    border: 1px solid;
+    border-radius: 15px;
+
+    &:hover {
+      background-color: #1976d2;
+      color: #fff;
+    }
+  }
+}
+
+@media (width<=1024px) {
+  .form {
+    font-size: 1.5em;
+
+    .input {
+      min-width: 300px;
+    }
+
+    .input {
+      font-size: 0.7em;
+      max-height: 30px;
+      min-width: 300px;
+    }
+
+    .button {
+      padding: 5px 15px;
+      font-size: 0.7em;
+      min-height: 30px;
+    }
+  }
+}

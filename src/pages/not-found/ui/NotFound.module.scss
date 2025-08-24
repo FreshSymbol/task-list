@@ -1,0 +1,40 @@
+.main {
+  display: flex;
+  padding: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  gap: 40px;
+
+  .title {
+    font-size: 5em;
+    color: #1976d2;
+  }
+
+  .subtitle {
+    font-size: 2em;
+  }
+
+  .link {
+    color: #1976d2;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (width<=1440px) {
+  .main {
+    font-size: 1.3em;
+    padding: 50px;
+    gap: 20px;
+  }
+}
+
+@media (width<=768px) {
+  .main {
+    font-size: 1em;
+  }
+}

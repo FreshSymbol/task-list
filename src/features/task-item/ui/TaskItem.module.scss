@@ -1,0 +1,56 @@
+.item {
+  width: 100%;
+  display: flex;
+  padding: 30px 60px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: start;
+  font-size: 4em;
+  border: 1px solid #1976d2;
+  border-radius: 20px;
+  gap: 20px;
+  white-space: nowrap;
+
+  .title {
+    font-weight: bold;
+  }
+
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .buttonContainer {
+    margin-left: auto;
+    display: flex;
+    gap: 15px;
+  }
+
+  .button {
+    color: #1976d2;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (width<=1440px) {
+  .item {
+    font-size: 2em;
+  }
+}
+
+@media (width<=1024px) {
+  .item {
+    padding: 15px 30px;
+    font-size: 1em;
+  }
+}
+
+@media (width<767px) {
+  .item {
+    padding: 10px;
+    font-size: 0.7em;
+    gap: 5px;
+  }
+}
