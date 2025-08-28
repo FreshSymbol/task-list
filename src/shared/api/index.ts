@@ -23,7 +23,9 @@ const checkResponse = async <T>(res: Response): Promise<T> => {
 };
 
 export const getTasks = async (pageParam: number): Promise<TaskRequest> => {
-  const res = await fetch(`${BASE_URL}?_page=${pageParam}&_limit=${LIMIT}`);
+  const res = await fetch(
+    `${BASE_URL}?_page=${pageParam}&_limit=${LIMIT}&_sort=id&_order=desc`
+  );
   const data = await checkResponse<TTask[]>(res);
   const totalCount = res.headers.get('X-Total-Count');
   const hasNextPage = totalCount && pageParam * LIMIT < parseInt(totalCount);

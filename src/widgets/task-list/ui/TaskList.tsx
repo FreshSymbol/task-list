@@ -1,10 +1,9 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
-import React, { ReactElement, useCallback, useEffect } from 'react';
+import { ReactElement, useCallback, useEffect } from 'react';
 import { getTasks } from '../../../shared/api';
 import styles from './TaskList.module.scss';
 import { Spinner } from '../../../shared/spiner';
 import { TaskItem } from '../../../features/task-item';
-import { nanoid } from 'nanoid';
 
 export const TaskList = (): ReactElement => {
   const {
@@ -31,6 +30,8 @@ export const TaskList = (): ReactElement => {
     if (isBottom) fetchNextPage();
   }, []);
 
+  const tasks = data?.pages.flatMap((page) => page.data) || [];
+
   useEffect(() => {
     window.addEventListener('scroll', scrollHandler, { passive: true });
 
@@ -43,12 +44,8 @@ export const TaskList = (): ReactElement => {
   return (
     <>
       <ul className={styles.list}>
-        {data?.pages.map((page) => (
-          <React.Fragment key={nanoid()}>
-            {page.data.map((task) => (
-              <TaskItem key={task.id} {...task} />
-            ))}
-          </React.Fragment>
+        {tasks.map((task) => (
+          <TaskItem key={task.id} {...task} />
         ))}
       </ul>
       <>
